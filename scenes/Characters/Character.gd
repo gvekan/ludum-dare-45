@@ -2,10 +2,13 @@ extends KinematicBody2D
 
 export var speed = 200
 
-
+var character_animations = []
 
 var is_f = true
 var is_l = true
+
+func _ready():
+	character_animations.append($CharacterAnimation)
 
 func move(x, y): 
 	var animation = "still_f"
@@ -14,10 +17,6 @@ func move(x, y):
 		is_f = y > 0
 	if x != 0:
 		is_l = x < 0
-	if is_f:
-		get_node("Sprite").set_flip_h(!is_l)
-	else:
-		get_node("Sprite").set_flip_h(is_l)
 	if is_run:
 		if is_f:
 			animation = "run_f"
@@ -25,8 +24,12 @@ func move(x, y):
 			animation = "run_b"
 	elif not is_f:
 		animation = "still_b"
-
-	$AnimationPlayer.play(animation)
+	for ca in character_animations:
+		if is_f:
+			ca.set_flip_h(!is_l)
+		else:
+			ca.set_flip_h(is_l)
+		ca.get_node("AnimationPlayer").play(animation)
 	if is_run:
 		var velocity = Vector2(x, y).normalized() * speed
 		move_and_slide(velocity)

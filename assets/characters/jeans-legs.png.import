@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mage_m.png-e5cfe353d703e2d36d29aec017c5758a.stex"
+path="res://.import/jeans-legs.png-451fd9491bd840f1301a94cb7739061c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/mage_m.png"
-dest_files=[ "res://.import/mage_m.png-e5cfe353d703e2d36d29aec017c5758a.stex" ]
+source_file="res://assets/characters/jeans-legs.png"
+dest_files=[ "res://.import/jeans-legs.png-451fd9491bd840f1301a94cb7739061c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
