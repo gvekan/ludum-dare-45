@@ -16,7 +16,6 @@ _global_script_class_icons={
 [application]
 
 config/name="Ludum Dare 45"
-run/main_scene="res://Characters/Player/PlayerScene.tscn"
 config/icon="res://icon.png"
 
 [rendering]
