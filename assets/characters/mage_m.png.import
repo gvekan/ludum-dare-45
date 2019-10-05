@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tree.png-4a0e7858770433f1c78a52c60ee45b5e.stex"
+path="res://.import/mage_m.png-e5cfe353d703e2d36d29aec017c5758a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Structures/Tree/Tree.png"
-dest_files=[ "res://.import/Tree.png-4a0e7858770433f1c78a52c60ee45b5e.stex" ]
+source_file="res://assets/characters/mage_m.png"
+dest_files=[ "res://.import/mage_m.png-e5cfe353d703e2d36d29aec017c5758a.stex" ]
 
 [params]
 

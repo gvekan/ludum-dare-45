@@ -1,16 +1,10 @@
-extends KinematicBody2D
-
-export var speed = 200
-
-
-
+extends "res://scenes/Characters/Character.gd"
 
 var last_horizontal_input = ""
 var last_vertical_input = ""
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var motion = Vector2(0, 0)
 	if Input.is_action_just_pressed("ui_left"):
 		last_horizontal_input = "ui_left"
 	elif Input.is_action_just_pressed("ui_right"):
@@ -23,12 +17,12 @@ func _physics_process(delta):
 		else:
 			last_horizontal_input = ""
 	
+	var x = 0
 	if last_horizontal_input == "ui_left":
-		motion.x = -speed
+		x = -1
 	elif last_horizontal_input == "ui_right":
-		motion.x = speed
+		x = 1
 		
-
 	if Input.is_action_just_pressed("ui_up"):
 		last_vertical_input = "ui_up"
 	elif Input.is_action_just_pressed("ui_down"):
@@ -40,10 +34,11 @@ func _physics_process(delta):
 			last_vertical_input = "ui_down"
 		else:
 			last_vertical_input = ""
-	
+			
+	var y = 0	
 	if last_vertical_input == "ui_up":
-		motion.y = -speed
+		y = -1
 	elif last_vertical_input == "ui_down":
-		motion.y = speed
+		y = 1
 	
-	move_and_slide(motion)
+	move(x, y)
