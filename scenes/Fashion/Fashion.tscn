@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Fashion/Fashion.gd" type="Script" id=1]
+[ext_resource path="res://assets/characters/naked-upper-body.png" type="Texture" id=2]
+[ext_resource path="res://assets/characters/sneakers-feets.png" type="Texture" id=3]
+[ext_resource path="res://assets/characters/jeans-legs.png" type="Texture" id=4]
+[ext_resource path="res://assets/characters/naked-head.png" type="Texture" id=5]
+
+[node name="Fashion" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="UpperBody" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+vframes = 4
+hframes = 2
+
+[node name="Feet" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 2
+
+[node name="Legs" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+vframes = 4
+hframes = 2
+
+[node name="Head" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+vframes = 4
+hframes = 2
