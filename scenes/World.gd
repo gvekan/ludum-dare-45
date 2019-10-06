@@ -1,6 +1,6 @@
 extends Node2D
 
-var item = preload("res://scenes/Items/item.tscn")
+var item = preload("res://scenes/Items/Item.tscn")
 var legs_jeans = preload("res://assets/characters/jeans-legs.png")
 
 # Called when the node enters the scene tree for the first time.
