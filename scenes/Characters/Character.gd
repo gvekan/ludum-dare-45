@@ -49,4 +49,10 @@ func move(x, y, fight = 0):
 func append_item(ID, texture):
 	if ID == "legs":
 		$Legs.texture = texture
+	elif ID == "feet":
+		$Feet.texture = texture
+	elif ID == "head":
+		$Head.texture = texture
+	elif ID == "upper":
+		$UpperBody.texture = texture
 	

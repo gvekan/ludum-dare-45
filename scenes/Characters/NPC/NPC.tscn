@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 100.0
 
-[node name="NPC" index="0" instance=ExtResource( 1 )]
+[node name="NPC" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 speed = 100
 

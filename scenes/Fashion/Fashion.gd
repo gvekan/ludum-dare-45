@@ -1,65 +1,52 @@
 extends Node2D
 var rng = RandomNumberGenerator.new()
 
-#Leg fashions
-var legs_jeans = preload("res://assets/characters/jeans-legs.png")
-var legs_naked = preload("res://assets/characters/naked-legs.png")
+var outfit = []
 
-enum leg_fashion{
-	JEANS,
-	NAKED
-}
+#Leg fashions
+var legs = []
+
 
 #Feet fashoins
-var feet_sneakers = preload("res://assets/characters/sneakers-feets.png")
-var feet_naked = preload("res://assets/characters/naked-feets.png")
+var feet = []
 
-enum feet_fashion{
-	SNEAKERS,
-	NAKED
-}
 
 #UpperBody fashions
-var upper_naked = preload("res://assets/characters/naked-upper-body.png")
-var upper_red_white = preload("res://assets/characters/stripe-red-white-upper-body.png")
-var upper_blue = preload("res://assets/characters/blue-upper-body.png")
+var upper_body = []
 
-enum upper_fashion{
-	RED_WHITE,
-	BLUE,
-	NAKED
-}
 
 #Head fashion
-var head_naked = preload("res://assets/characters/naked-head.png")
+var head = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	legs.append(preload("res://assets/characters/jeans-legs.png"))
+	legs.append(preload("res://assets/characters/naked-legs.png"))
+	feet.append(preload("res://assets/characters/sneakers-feets.png"))
+	feet.append(preload("res://assets/characters/naked-feets.png"))
+	upper_body.append(preload("res://assets/characters/naked-upper-body.png"))
+	upper_body.append(preload("res://assets/characters/stripe-red-white-upper-body.png"))
+	upper_body.append(preload("res://assets/characters/blue-upper-body.png"))
+	head.append(preload("res://assets/characters/naked-head.png"))
 	rng.randomize()
 	
-	var leg = rng.randi_range (0,leg_fashion.size()-1)
-	print(leg_fashion.JEANS)
-	if leg == leg_fashion.JEANS:
-		$Legs.texture = legs_jeans
-	elif leg == leg_fashion.NAKED:
-		$Legs.texture = legs_naked
-		
-	var feet = rng.randi_range (0,feet_fashion.size()-1)
-	if feet == feet_fashion.SNEAKERS:
-		$Feet.texture = feet_sneakers
-	elif feet == feet_fashion.NAKED:
-		$Feet.texture = feet_naked
-		
-	var upper = rng.randi_range (0,upper_fashion.size()-1)
-	if upper == upper_fashion.RED_WHITE:
-		$UpperBody.texture = upper_red_white
-	elif upper == upper_fashion.BLUE:
-		$UpperBody.texture = upper_blue
-	elif upper == upper_fashion.NAKED:
-		$UpperBody.texture = upper_naked
+	new_outfit()
 	
-	get_node("Head").texture = head_naked
-
+func new_outfit():
+	outfit = []
+	
+	$Legs.texture = legs[rng.randi_range (0,legs.size()-1)]
+	outfit.append($Legs.texture)
+		
+	$Feet.texture = feet[rng.randi_range (0,feet.size()-1)]
+	outfit.append($Feet.texture)
+		
+	$UpperBody.texture = upper_body[rng.randi_range (0,upper_body.size()-1)]
+	outfit.append($UpperBody.texture)
+	
+	$Head.texture = head[rng.randi_range (0,head.size()-1)]
+	outfit.append($Head.texture)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://assets/characters/naked-head.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "anim"
@@ -19,16 +20,19 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 14 )
+extents = Vector2( 6, 6 )
 
-[node name="Item" type="Area2D"]
+[node name="HeadItem" type="Area2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+ID = "head"
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, 12 )
 vframes = 4
 hframes = 2
 
