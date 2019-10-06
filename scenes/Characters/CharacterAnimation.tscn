@@ -71,11 +71,9 @@ tracks/0/keys = {
 }
 
 [node name="CharacterAnimation" type="Sprite"]
-scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 vframes = 4
 hframes = 2
-frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/run_b = SubResource( 1 )
