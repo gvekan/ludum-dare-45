@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/world_.tres" type="TileSet" id=2]
 [ext_resource path="res://scenes/Characters/NPC/NPC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Characters/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Structures/Tree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Fashion/Fashion.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,4 +31,7 @@ position = Vector2( 590.901, 209.95 )
 position = Vector2( 423.701, 198.55 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Fashion" parent="HUD" instance=ExtResource( 6 )]
+position = Vector2( 21.0527, 43.1579 )
 [connection signal="died" from="YSort/Player" to="." method="_on_Player_died"]
