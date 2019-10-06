@@ -28,3 +28,6 @@ position = Vector2( 590.901, 209.95 )
 
 [node name="Tree2" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 423.701, 198.55 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+[connection signal="died" from="YSort/Player" to="." method="_on_Player_died"]
