@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/world_.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Characters/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Structures/Tree.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Items/pants.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Items/item.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 
@@ -24,4 +24,4 @@ position = Vector2( 590.901, 209.95 )
 [node name="Tree2" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 423.701, 198.55 )
 
-[node name="pants" parent="YSort" instance=ExtResource( 4 )]
+[node name="item" parent="." instance=ExtResource( 4 )]

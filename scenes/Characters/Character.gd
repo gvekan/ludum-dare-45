@@ -10,7 +10,7 @@ var is_l = true
 func _ready():
 	character_animations.append($Legs)
 	character_animations.append($Head)
-	character_animations.append($Feets)
+	character_animations.append($Feet)
 	character_animations.append($UpperBody)
 
 func move(x, y): 
@@ -36,4 +36,8 @@ func move(x, y):
 	if is_run:
 		var velocity = Vector2(x, y).normalized() * speed
 		move_and_slide(velocity)
+
+func append_item(ID, texture):
+	if ID == "legs":
+		$Legs.texture = texture
 	
