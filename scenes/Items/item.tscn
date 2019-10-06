@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/Items/pants.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Items/item.gd" type="Script" id=1]
 [ext_resource path="res://assets/characters/jeans-legs.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "anim"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:position")
+tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/imported = false
@@ -22,14 +22,14 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 13.4312 )
 
-[node name="pants" type="Area2D"]
+[node name="Item" type="Area2D"]
 position = Vector2( 97.7672, 56.6021 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -2, -6.14851 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
