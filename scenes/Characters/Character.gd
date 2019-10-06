@@ -13,7 +13,7 @@ func _ready():
 	character_animations.append($Feet)
 	character_animations.append($UpperBody)
 
-func move(x, y): 
+func move(x, y, fight = 0): 
 	var animation = "still_f"
 	var is_run = y != 0 or x != 0
 	if y != 0:
@@ -28,11 +28,20 @@ func move(x, y):
 	elif not is_f:
 		animation = "still_b"
 	for ca in character_animations:
-		if is_f:
-			ca.set_flip_h(!is_l)
+		if fight != 0 and ca.name == "UpperBody":
+			print("Do the fight animation")
+			if is_f:
+				ca.set_flip_h(fight > 0)
+				ca.get_node("AnimationPlayer").play("fight_f")
+			else:
+				ca.set_flip_h(fight < 0)
+				ca.get_node("AnimationPlayer").play("fight_b")
 		else:
-			ca.set_flip_h(is_l)
-		ca.get_node("AnimationPlayer").play(animation)
+			if is_f:
+				ca.set_flip_h(!is_l)
+			else:
+				ca.set_flip_h(is_l)
+			ca.get_node("AnimationPlayer").play(animation)
 	if is_run:
 		var velocity = Vector2(x, y).normalized() * speed
 		move_and_slide(velocity)

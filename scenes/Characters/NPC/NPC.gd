@@ -1,6 +1,7 @@
 extends "res://scenes/Characters/Character.gd"
 
 export var move_duration = 2
+export var hit_radius = 50
 
 var follow
 var x = 0
@@ -24,10 +25,11 @@ func _physics_process(delta):
 	# TODO 2: Use raycast to not see throught obstacles
 	
 	var motion = follow.position - position
-	move(motion.x, motion.y)
-	
-	
-
+	var fight = 0
+	if motion.length() < hit_radius:
+		print("Player is hitable!!!")
+		fight = motion.x
+	move(motion.x, motion.y, fight)
 
 func _on_FOV_body_entered(body):
 	if body.name == "Player":

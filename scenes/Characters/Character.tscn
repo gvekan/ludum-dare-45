@@ -4,8 +4,8 @@
 [ext_resource path="res://scenes/Characters/CharacterAnimation.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/characters/naked-head.png" type="Texture" id=3]
 [ext_resource path="res://assets/characters/naked-feets.png" type="Texture" id=4]
-[ext_resource path="res://assets/characters/naked-upper-body.png" type="Texture" id=5]
-[ext_resource path="res://assets/characters/naked-legs.png" type="Texture" id=6]
+[ext_resource path="res://assets/characters/naked-legs.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Characters/FighterAnimation.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 30 )
@@ -24,8 +24,7 @@ texture = ExtResource( 3 )
 [node name="Feet" parent="." instance=ExtResource( 2 )]
 texture = ExtResource( 4 )
 
-[node name="UpperBody" parent="." instance=ExtResource( 2 )]
+[node name="Legs" parent="." instance=ExtResource( 2 )]
 texture = ExtResource( 5 )
 
-[node name="Legs" parent="." instance=ExtResource( 2 )]
-texture = ExtResource( 6 )
+[node name="UpperBody" parent="." instance=ExtResource( 6 )]

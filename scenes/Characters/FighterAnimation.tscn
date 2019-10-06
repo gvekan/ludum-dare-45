@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Characters/CharacterAnimation.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/characters/naked-upper-body.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fight_b"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.000112109, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 12, 13, 12 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fight_f"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00268368, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 9 ]
+}
+
+[node name="FighterAnimation" instance=ExtResource( 1 )]
+texture = ExtResource( 2 )
+vframes = 7
+frame = 11
+
+[node name="AnimationPlayer" parent="." index="0"]
+anims/fight_b = SubResource( 1 )
+anims/fight_f = SubResource( 2 )
