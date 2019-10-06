@@ -3,10 +3,6 @@ extends "res://scenes/Characters/Character.gd"
 var last_horizontal_input = ""
 var last_vertical_input = ""
 
-
-func _ready():
-	character_animations.append($Legs)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_left"):

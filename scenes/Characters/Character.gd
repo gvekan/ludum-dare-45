@@ -8,7 +8,10 @@ var is_f = true
 var is_l = true
 
 func _ready():
-	character_animations.append($CharacterAnimation)
+	character_animations.append($Legs)
+	character_animations.append($Head)
+	character_animations.append($Feets)
+	character_animations.append($UpperBody)
 
 func move(x, y): 
 	var animation = "still_f"
