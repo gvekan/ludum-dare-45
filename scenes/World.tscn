@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/world_.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Characters/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Structures/Tree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Items/pants.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 
@@ -15,9 +16,12 @@ tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 496, 247 )
 
 [node name="Tree" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 590.901, 209.95 )
 
 [node name="Tree2" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 423.701, 198.55 )
+
+[node name="pants" parent="YSort" instance=ExtResource( 4 )]

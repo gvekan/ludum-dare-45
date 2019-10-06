@@ -5,6 +5,7 @@
 [sub_resource type="Animation" id=1]
 resource_name = "run_b"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
