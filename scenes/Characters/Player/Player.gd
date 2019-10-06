@@ -3,8 +3,19 @@ extends "res://scenes/Characters/Character.gd"
 var last_horizontal_input = ""
 var last_vertical_input = ""
 
+var is_dead = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if is_dead:
+		return
+	if Input.is_action_just_pressed("ui_cancel"):
+		is_dead = true
+		for ca in character_animations:
+			ca.visible = false
+			ca.get_node("AnimationPlayer").stop()
+		$DeadSprite.visible = true
+		$DeadAnimationPlayer.play("default")
 	if Input.is_action_just_pressed("ui_left"):
 		last_horizontal_input = "ui_left"
 	elif Input.is_action_just_pressed("ui_right"):
