@@ -62,8 +62,8 @@ func _physics_process(delta):
 	move(x, y)
 
 func hit(damage):
-	health -= damage
-	if health < 0:
+	health-=damage
+	if health-damage < 0:
 		health = 0
 		emit_signal("died")
 		is_dead = true
@@ -76,4 +76,5 @@ func hit(damage):
 	
 func on_level_complete():
 	health += 20
+	$Camera2D/HUD/Health.text = "Health: %s" % health
 	change_outfit(nude)

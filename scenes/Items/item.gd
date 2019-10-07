@@ -12,9 +12,9 @@ func _ready():
 #Called when object collides with pants
 func _on_item_body_entered(body):
 	if body.name == "Player":
-		queue_free()
 		body.append_item(ID, $Sprite.texture)
 		emit_signal("texture_changed", ID, $Sprite.texture)
+		queue_free()
 	#elif body.name != "NPC":
 	#	emit_signal("overlapping", self)
 	

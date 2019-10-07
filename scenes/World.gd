@@ -16,7 +16,6 @@ var upper_item = preload("res://scenes/Items/UpperItem.tscn")
 var feet_item = preload("res://scenes/Items/FeetItem.tscn")
 var npc = preload("res://scenes/Characters/NPC/NPC.tscn")
 var player_outfit = {}
-var has_correct_outfit = false
 var rng = RandomNumberGenerator.new()
 
 
@@ -26,7 +25,6 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
-	var new_item
 	for texture in $HUD/Fashion.legs:
 		add_item("legs", texture, legs_item.instance())
 		
@@ -39,10 +37,7 @@ func _ready():
 	for texture in $HUD/Fashion.head:
 		add_item("head", texture, head_item.instance())
 	
-	player_outfit[LEGS_ID] = $YSort/Player/Legs.texture
-	player_outfit[FEET_ID] = $YSort/Player/Feet.texture
-	player_outfit[UPPER_BODY_ID] = $YSort/Player/UpperBody.texture
-	player_outfit[HEAD_ID] = $YSort/Player/Head.texture
+	load_player_outfit()
 	
 	new_outfit()
 		
@@ -60,9 +55,14 @@ func check_correct_outfit():
 	return  true
 	
 	
+func load_player_outfit():
+	player_outfit[LEGS_ID] = $YSort/Player/Legs.texture
+	player_outfit[FEET_ID] = $YSort/Player/Feet.texture
+	player_outfit[UPPER_BODY_ID] = $YSort/Player/UpperBody.texture
+	player_outfit[HEAD_ID] = $YSort/Player/Head.texture
 	
 func get_random_pos_inbounds():
-	return Vector2(rng.randi_range(32, 900), rng.randi_range(32, 570))
+	return Vector2(rng.randi_range(48, 976), rng.randi_range(48, 552))
 
 func add_item(ID, texture, new_item):
 	new_item.ID = ID
@@ -92,6 +92,7 @@ func update_texture(ID, texture):
 	if check_correct_outfit():
 		new_outfit()
 		$YSort/Player.on_level_complete()
+		load_player_outfit()
 		add_npc()
 		level += 1
 		$HUD/LevelLabel.text = "LEVEL %s" % level
@@ -113,4 +114,6 @@ func _on_Player_died():
 	
 
 func _on_Restart_pressed():
-	get_tree().change_scene("res://scenes/world.tscn")
+	get_tree().change_scene("res://scenes/World.tscn")
+	
+

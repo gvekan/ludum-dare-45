@@ -20,7 +20,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14, 10 )
+extents = Vector2( 14, 16 )
 
 [node name="UpperItem" type="Area2D"]
 script = ExtResource( 1 )
@@ -41,4 +41,5 @@ autoplay = "anim"
 anims/anim = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
 shape = SubResource( 2 )

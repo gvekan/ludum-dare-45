@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Ludum Dare 45"
+config/name="Keep up with fashion"
 run/main_scene="res://scenes/StartScene.tscn"
 config/icon="res://icon.png"
 
