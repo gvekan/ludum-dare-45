@@ -22,5 +22,9 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FOV" index="0"]
 shape = SubResource( 1 )
+
+[node name="HitCooldown" type="Timer" parent="." index="6"]
+wait_time = 0.1
 [connection signal="body_entered" from="FOV" to="." method="_on_FOV_body_entered"]
 [connection signal="body_exited" from="FOV" to="." method="_on_FOV_body_exited"]
+[connection signal="timeout" from="HitCooldown" to="." method="_on_HitCooldown_timeout"]

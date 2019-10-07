@@ -29,7 +29,6 @@ func move(x, y, fight = 0):
 		animation = "still_b"
 	for ca in character_animations:
 		if fight != 0 and ca.name == "UpperBody":
-			print("Do the fight animation")
 			if is_f:
 				ca.set_flip_h(fight > 0)
 				ca.get_node("AnimationPlayer").play("fight_f")
@@ -55,4 +54,10 @@ func append_item(ID, texture):
 		$Head.texture = texture
 	elif ID == "upper":
 		$UpperBody.texture = texture
+		
+func change_outfit(outfit):
+	$Legs.texture = outfit["legs"]
+	$Feet.texture = outfit["feet"]
+	$Head.texture = outfit["head"]
+	$UpperBody.texture = outfit["upper"]
 	

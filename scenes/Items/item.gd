@@ -2,6 +2,8 @@ extends Area2D
 
 export var ID = "legs"
 
+#signal overlapping
+
 signal texture_changed
 
 func _ready():
@@ -13,4 +15,6 @@ func _on_item_body_entered(body):
 		queue_free()
 		body.append_item(ID, $Sprite.texture)
 		emit_signal("texture_changed", ID, $Sprite.texture)
+	#elif body.name != "NPC":
+	#	emit_signal("overlapping", self)
 	

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tree.png-bf64094b89302dd1be83aa5edf9988ef.stex"
+path="res://.import/black-feet.png-727c59a6b1b3a53b8332e195d80df099.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree.png"
-dest_files=[ "res://.import/tree.png-bf64094b89302dd1be83aa5edf9988ef.stex" ]
+source_file="res://assets/characters/black-feet.png"
+dest_files=[ "res://.import/black-feet.png-727c59a6b1b3a53b8332e195d80df099.stex" ]
 
 [params]
 

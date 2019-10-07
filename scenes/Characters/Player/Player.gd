@@ -1,5 +1,9 @@
 extends "res://scenes/Characters/Character.gd"
 
+
+
+var nude = {}
+
 var last_horizontal_input = ""
 var last_vertical_input = ""
 export var health = 100
@@ -9,6 +13,10 @@ signal died
 var is_dead = false
 
 func _ready():
+	nude["feet"] = preload("res://assets/characters/naked-feets.png")
+	nude["legs"] = preload("res://assets/characters/naked-legs.png")
+	nude["upper"] = preload("res://assets/characters/naked-upper-body.png")
+	nude["head"] = preload("res://assets/characters/naked-head.png")
 	$Camera2D/HUD/Health.text = "Health: %s" % health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,5 +72,8 @@ func hit(damage):
 			ca.get_node("AnimationPlayer").stop()
 		$DeadSprite.visible = true
 		$DeadAnimationPlayer.play("default")
-	$Camera2D/HUD/Health.text = "Health: %s" % health
-		
+	$Camera2D/HUD/Health.text = "HEALTH %s" % health
+	
+func on_level_complete():
+	health += 20
+	change_outfit(nude)

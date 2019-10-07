@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tree.png-bf64094b89302dd1be83aa5edf9988ef.stex"
+path="res://.import/underpants-legs.png-afb5ddcd50c388b8cf8690034cce3095.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree.png"
-dest_files=[ "res://.import/tree.png-bf64094b89302dd1be83aa5edf9988ef.stex" ]
+source_file="res://assets/characters/underpants-legs.png"
+dest_files=[ "res://.import/underpants-legs.png-afb5ddcd50c388b8cf8690034cce3095.stex" ]
 
 [params]
 

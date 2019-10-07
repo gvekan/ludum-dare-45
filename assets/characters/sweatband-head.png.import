@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tree.png-bf64094b89302dd1be83aa5edf9988ef.stex"
+path="res://.import/sweatband-head.png-b95e4f9e74074778d992da838681348e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree.png"
-dest_files=[ "res://.import/tree.png-bf64094b89302dd1be83aa5edf9988ef.stex" ]
+source_file="res://assets/characters/sweatband-head.png"
+dest_files=[ "res://.import/sweatband-head.png-b95e4f9e74074778d992da838681348e.stex" ]
 
 [params]
 
